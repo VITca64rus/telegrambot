@@ -83,7 +83,7 @@ def show_all_photo(message):
         удалять введите не существующий номер')
         update_state(message, DELETE_PHOTO)
     else:
-        bot.send_message(message.chat.id, 'Удаление прекращено')
+        bot.send_message(message.chat.id, 'Удаление прекращено', reply_markup=keyboard1)
         update_state(message, START)
 
 @bot.message_handler(func=lambda message: get_state(message) == DELETE_PHOTO)
